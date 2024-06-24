@@ -13,7 +13,7 @@ RUN curl -s -Lo terragrunt https://github.com/gruntwork-io/terragrunt/releases/d
 
 # Download atlantis-config
 RUN curl -s -Lo terragrunt-atlantis-config.tar.gz \
-https://github.com/afida-cloud/terragrunt-atlantis-config/releases/download/v${ATLANTIS_CONFIG_VERSION}/terragrunt-atlantis-config_${ATLANTIS_CONFIG_VERSION}_linux_amd64.tar.gz && \
+https://github.com/afida-gmbh/terragrunt-atlantis-config/releases/download/v${TERRAGRUNT_VERSION}/terragrunt-atlantis-config_${TERRAGRUNT_VERSION}_linux_amd64 && \
       tar -xf terragrunt-atlantis-config.tar.gz && \
       mv terragrunt-atlantis-config_${ATLANTIS_CONFIG_VERSION}_linux_amd64/terragrunt-atlantis-config_${ATLANTIS_CONFIG_VERSION}_linux_amd64 /usr/local/bin/terragrunt-atlantis-config && \
       chmod +x /usr/local/bin/terragrunt-atlantis-config && \
