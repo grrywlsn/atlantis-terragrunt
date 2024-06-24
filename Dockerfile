@@ -6,6 +6,8 @@ ENV TERRAGRUNT_VERSION=$TERRAGRUNT_VERSION
 ARG ATLANTIS_CONFIG_VERSION=1.17.0
 ENV ATLANTIS_CONFIG_VERSION=$ATLANTIS_CONFIG_VERSION
 
+USER root
+
 # Download Terragrunt
 RUN curl -s -Lo terragrunt https://github.com/gruntwork-io/terragrunt/releases/download/${TERRAGRUNT_VERSION}/terragrunt_linux_amd64 && \
     chmod +x terragrunt && \
@@ -23,3 +25,5 @@ https://github.com/afida-cloud/terragrunt-atlantis-config/releases/download/v${A
 RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" && \
     mv kubectl /usr/local/bin/kubectl && \
     chmod +x /usr/local/bin/kubectl
+
+USER atlantis
