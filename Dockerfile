@@ -1,4 +1,4 @@
-FROM ghcr.io/runatlantis/atlantis:v0.29.0
+FROM ghcr.io/runatlantis/atlantis:v0.30.0
 
 ARG TERRAGRUNT_VERSION=v0.67.1
 ENV TERRAGRUNT_VERSION=$TERRAGRUNT_VERSION
