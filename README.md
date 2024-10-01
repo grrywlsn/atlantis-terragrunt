@@ -10,6 +10,7 @@ Each image is built from the mainline Atlantis image as a base. Useful binaries 
 
 | Image tag | Atlantis version | Terragrunt version | Atlantis config version |
 |-----------|------------------|--------------------|-------------------------|
+| 1.4.0     | 0.30.0           | 0.67.15            | 1.18.0                  |
 | 1.3.0     | 0.29.0           | 0.67.1             | 1.18.0                  |
 | 1.2.0     | 0.28.5           | 0.66.8             | 1.18.0                  |
 | 1.1.0     | 0.28.3           | 0.59.5             | 1.18.0                  |
