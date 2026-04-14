@@ -3,6 +3,39 @@
   "extends": [
     "config:recommended"
   ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Terragrunt release pinned in Dockerfile ARG (see Renovate comment above ARG)",
+      "managerFilePatterns": [
+        "/(^|/|\\.)Dockerfile$/",
+        "/(^|/)Dockerfile\\.[^/]*$/"
+      ],
+      "matchStrings": [
+        "(?:^|\\r?\\n)[ \\t]*# renovate: datasource=github-releases depName=gruntwork-io/terragrunt[ \\t]*\\r?\\n[ \\t]*ARG TERRAGRUNT_VERSION=(?<currentValue>\\S+)"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "gruntwork-io/terragrunt",
+      "packageNameTemplate": "gruntwork-io/terragrunt",
+      "versioningTemplate": "semver"
+    },
+    {
+      "customType": "regex",
+      "description": "terragrunt-atlantis-config release pinned in Dockerfile ARG (tags are v-prefixed; ARG omits v for download URL)",
+      "managerFilePatterns": [
+        "/(^|/|\\.)Dockerfile$/",
+        "/(^|/)Dockerfile\\.[^/]*$/"
+      ],
+      "matchStrings": [
+        "(?:^|\\r?\\n)[ \\t]*# renovate: datasource=github-releases depName=transcend-io/terragrunt-atlantis-config[ \\t]*\\r?\\n[ \\t]*ARG ATLANTIS_CONFIG_VERSION=(?<currentValue>\\S+)"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "transcend-io/terragrunt-atlantis-config",
+      "packageNameTemplate": "transcend-io/terragrunt-atlantis-config",
+      "extractVersionTemplate": "^v(?<version>.+)$",
+      "versioningTemplate": "semver"
+    }
+  ],
   "packageRules": [
     {
       "matchUpdateTypes": [
