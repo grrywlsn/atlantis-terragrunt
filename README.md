@@ -1,22 +1,11 @@
 # atlantis-terragrunt
 A simple Docker image to let Atlantis run Terragrunt
 
-Image can be pulled from `ghcr.io/grrywlsn/atlantis-terragrunt:v1.0.0`, where `v1.0.0` will be one of the [tagged releases](https://github.com/grrywlsn/atlantis-terragrunt/releases) below.
+Image can be pulled from `ghcr.io/grrywlsn/atlantis-terragrunt:v1.0.0`, where `v1.0.0` matches a [GitHub release tag](https://github.com/grrywlsn/atlantis-terragrunt/releases).
 
-## Versions available
+## Versions in each image
 
-Each image is built from the mainline Atlantis image as a base. Useful binaries are added, you can see the versions in this table:
-
-
-| Image tag | Atlantis version | Terragrunt version | Atlantis config version |
-|-----------|------------------|--------------------|-------------------------|
-| 1.6.0     | 0.36.0           | 0.90.0             | 1.21.0                  |
-| 1.5.0     | 0.32.0           | 0.71.1             | 1.19.0                  |
-| 1.4.0     | 0.30.0           | 0.67.15            | 1.18.0                  |
-| 1.3.0     | 0.29.0           | 0.67.1             | 1.18.0                  |
-| 1.2.0     | 0.28.5           | 0.66.8             | 1.18.0                  |
-| 1.1.0     | 0.28.3           | 0.59.5             | 1.18.0                  |
-| 1.0.0     | 0.26.0           | 0.52.5             | 1.17.0                  |
+Each image is built from the mainline Atlantis image as a base, with Terragrunt and `terragrunt-atlantis-config` added. For every [GitHub release](https://github.com/grrywlsn/atlantis-terragrunt/releases), the release notes begin with a **Components in this image** section listing the exact Atlantis, Terragrunt, and terragrunt-atlantis-config versions baked into that tag (parsed from the `Dockerfile` on the release commit).
 
 - Atlantis: https://github.com/runatlantis/atlantis/releases
 - Terragrunt: https://github.com/gruntwork-io/terragrunt/releases
