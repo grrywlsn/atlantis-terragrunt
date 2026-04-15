@@ -21,6 +21,9 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: Release notes prefix (component versions from Dockerfile)
+      run: bash scripts/release-body-prefix-from-dockerfile.sh > release-body.md
+
     - name: 'Get Previous tag'
       id: previoustag
       uses: "WyriHaximus/github-action-get-previous-tag@v2"
@@ -39,6 +42,7 @@ jobs:
     - uses: softprops/action-gh-release@v3
       if: contains(github.event.pull_request.labels.*.name, 'major')
       with:
+        body_path: release-body.md
         generate_release_notes: true
         token: "${{ secrets.GITHUB_TOKEN }}"
         tag_name: "${{ steps.semvers.outputs.v_major }}"
@@ -52,6 +56,7 @@ jobs:
     - uses: softprops/action-gh-release@v3
       if: contains(github.event.pull_request.labels.*.name, 'minor')
       with:
+        body_path: release-body.md
         generate_release_notes: true
         token: "${{ secrets.GITHUB_TOKEN }}"
         tag_name: "${{ steps.semvers.outputs.v_minor }}"
@@ -65,6 +70,7 @@ jobs:
     - uses: softprops/action-gh-release@v3
       if: contains(github.event.pull_request.labels.*.name, 'patch')
       with:
+        body_path: release-body.md
         generate_release_notes: true
         token: "${{ secrets.GITHUB_TOKEN }}"
         tag_name: "${{ steps.semvers.outputs.v_patch }}"
@@ -83,6 +89,7 @@ jobs:
     - uses: softprops/action-gh-release@v3
       name: "Tag release"
       with:
+        body_path: release-body.md
         generate_release_notes: true
         token: "${{ secrets.GITHUB_TOKEN }}"
         tag_name: "${{ steps.set-version-tag.outputs.version-tag }}"
