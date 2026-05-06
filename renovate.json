@@ -39,6 +39,30 @@
   "packageRules": [
     {
       "matchUpdateTypes": [
+        "major"
+      ],
+      "addLabels": [
+        "major"
+      ]
+    },
+    {
+      "matchUpdateTypes": [
+        "minor"
+      ],
+      "addLabels": [
+        "minor"
+      ]
+    },
+    {
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "addLabels": [
+        "patch"
+      ]
+    },
+    {
+      "matchUpdateTypes": [
         "minor",
         "patch",
         "pin",
