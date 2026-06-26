@@ -1,4 +1,4 @@
-FROM ghcr.io/runatlantis/atlantis:v0.44.0
+FROM ghcr.io/runatlantis/atlantis:v0.44.1
 
 # renovate: datasource=github-releases depName=gruntwork-io/terragrunt
 ARG TERRAGRUNT_VERSION=v1.0.8
