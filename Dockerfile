@@ -1,7 +1,7 @@
 FROM ghcr.io/runatlantis/atlantis:v0.48.2
 
 # renovate: datasource=github-releases depName=gruntwork-io/terragrunt
-ARG TERRAGRUNT_VERSION=v1.2.0
+ARG TERRAGRUNT_VERSION=v1.2.1
 ENV TERRAGRUNT_VERSION=$TERRAGRUNT_VERSION
 
 # renovate: datasource=github-releases depName=transcend-io/terragrunt-atlantis-config
